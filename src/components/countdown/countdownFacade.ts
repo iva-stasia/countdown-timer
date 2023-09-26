@@ -1,4 +1,4 @@
-import * as dayjs from "dayjs";
+import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import { format, useSetFlip } from "../../utils";
 
