@@ -72,7 +72,7 @@ const CardTop = styled(CardPart)<CardProps>`
   animation: ${(props) =>
     props.flip
       ? css`
-          ${flipTop} 300ms ease-in
+          ${flipTop} 400ms ease-in
         `
       : ""};
   transform-origin: bottom;
@@ -98,7 +98,7 @@ const CardBottom = styled(CardPart)<CardProps>`
   animation: ${(props) =>
     props.flip
       ? css`
-          ${flipBottom} 300ms ease-out 300ms
+          ${flipBottom} 400ms ease-out 400ms
         `
       : ""};
   transform-origin: top;

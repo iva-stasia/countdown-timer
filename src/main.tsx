@@ -25,8 +25,8 @@ const globalStyles = css`
 `;
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
+  <React.Fragment>
     <Global styles={globalStyles} />
     <App />
-  </React.StrictMode>
+  </React.Fragment>
 );

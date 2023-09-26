@@ -12,7 +12,7 @@ const useCountdownFacade = () => {
   const [flipMinutes, setFlipMinutes] = useState(false);
   const [flipSeconds, setFlipSeconds] = useState(false);
 
-  const year = dayjs().add(1, "year").year().toString();
+  const year = (dayjs().year() + 1).toString();
   const countToDate = dayjs(`${year}-01-01 00:00`);
 
   useSetFlip(days, setFlipDays);

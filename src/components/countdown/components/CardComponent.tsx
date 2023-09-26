@@ -17,8 +17,8 @@ type CardComponentProps = {
 };
 
 const CardComponent = ({ title, date, flip, setFlip }: CardComponentProps) => {
-  const [topDate, setTopDate] = useState(() => date);
-  const [bottomDate, setBottomDate] = useState(() => date);
+  const [topDate, setTopDate] = useState(date);
+  const [bottomDate, setBottomDate] = useState(date);
 
   return (
     <div>
@@ -33,26 +33,27 @@ const CardComponent = ({ title, date, flip, setFlip }: CardComponentProps) => {
           </CardBottom>
         </WholeCard>
 
-        {flip && (
-          <>
-            <CardTop
-              flip={flip}
-              onAnimationStart={() => setTimeout(() => setTopDate(date), 250)}
-            >
-              <Date>{topDate}</Date>
-              <Shadow />
-            </CardTop>
-            <CardBottom
-              flip={flip}
-              onAnimationEnd={() => setFlip(false)}
-              onAnimationStart={() => {
-                setTimeout(() => setBottomDate(date), 250);
-              }}
-            >
-              <Date>{date}</Date>
-            </CardBottom>
-          </>
-        )}
+        <CardTop
+          flip={flip}
+          onAnimationStart={() => {
+            setTimeout(() => setTopDate(date), 350);
+          }}
+        >
+          <Date>{topDate}</Date>
+          <Shadow />
+        </CardTop>
+
+        <CardBottom
+          flip={flip}
+          onAnimationEnd={() => {
+            setFlip(false);
+          }}
+          onAnimationStart={() => {
+            setTimeout(() => setBottomDate(date), 350);
+          }}
+        >
+          <Date>{date}</Date>
+        </CardBottom>
       </FlipCardContainer>
       <CardTitle>{title}</CardTitle>
     </div>
